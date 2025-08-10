@@ -1,0 +1,78 @@
+/* ECIM Skool - CSS Optimizado y Minificado */
+:root{--brand:#22D1D7;--brand-2:#3B82F6;--bg:#ffffff;--text:#0b0b0b;--muted:#6B7280;--radius:14px;--shadow:0 1px 2px rgba(0,0,0,.04);--shadow-hover:0 16px 40px rgba(27,38,49,.12)}
+*{box-sizing:border-box}html,body{height:100%}
+body{font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,"Helvetica Neue",Arial,sans-serif;margin:0;color:var(--text);background:var(--bg);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:0 1.25rem}
+
+/* Layout optimizado */
+.site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eef0f3;z-index:50;backdrop-filter:blur(10px)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:1rem}
+.custom-logo{max-height:38px;height:38px;width:auto;object-fit:contain}
+.site-header nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0}
+.site-header nav a{font-weight:700;opacity:.9;transition:opacity .2s ease}
+.site-header nav a:hover{opacity:1}
+
+/* Botones optimizados */
+.sk-btn,a.sk-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border:1.5px solid #e5e7eb;border-radius:999px;background:#fff;cursor:pointer;font-weight:800;line-height:1;color:#111;position:relative;overflow:hidden;transition:all .2s ease;text-decoration:none}
+.sk-btn--primary{background:#111;color:#fff;border-color:#111}
+.sk-btn--ghost{background:#fff;border-color:#dbe0e6}
+.sk-btn--ghost:hover{background:#f8fafc;transform:translateY(-1px)}
+.sk-btn:disabled{opacity:.6;cursor:not-allowed}
+.sk-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:var(--shadow-hover)}
+
+/* Cards optimizadas */
+.sk-panel,.sk-card{background:#fff;border:1px solid #eef0f3;border-radius:16px;padding:1.1rem;box-shadow:var(--shadow);transition:all .2s ease}
+.sk-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+.glass{position:relative;background:rgba(255,255,255,.7);backdrop-filter:saturate(1.4) blur(8px);border:1px solid #eef0f3;border-radius:20px;padding:1rem;transition:all .2s ease}
+
+/* Grids optimizados */
+.pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+
+/* Responsive optimizado */
+@media (max-width:768px){
+.container{padding:0 1rem}
+.site-header .container{min-height:60px;flex-wrap:wrap}
+.site-header nav ul{gap:.8rem}
+.hero{padding:2rem 0}
+.pay-grid,.mod-grid{grid-template-columns:1fr;gap:.8rem}
+.sk-panel,.sk-card,.glass{padding:.8rem}
+.sk-btn{padding:.6rem .8rem;font-size:.9rem}
+.paywall-layout{flex-direction:column}
+.payment-sidebar{width:100%;order:2;margin-top:1rem}
+.payment-content{order:1}
+.payment-methods{flex-direction:row;overflow-x:auto;gap:.5rem;padding-bottom:.5rem}
+.payment-method{min-width:120px;padding:.6rem .8rem;font-size:.8rem}
+.bank-list{grid-template-columns:1fr}
+.bank-card{padding:.8rem}
+.account-details{flex-direction:column;gap:.5rem}
+}
+
+@media (max-width:480px){
+.container{padding:0 .8rem}
+.site-header .container{min-height:56px}
+.custom-logo{max-height:32px;height:32px}
+.hero{padding:1.5rem 0}
+.hero h1{font-size:1.8rem}
+.sk-panel,.sk-card,.glass{padding:.6rem}
+.sk-btn{padding:.5rem .7rem;font-size:.8rem}
+.section-title{font-size:1.4rem}
+.payment-method{min-width:100px;padding:.5rem .6rem;font-size:.75rem}
+.upload-form{padding:.8rem}
+.bank-card{padding:.6rem}
+}
+
+/* Animaciones optimizadas */
+@media (prefers-reduced-motion:reduce){
+.sk-btn,.sk-card,.glass{transition:none}
+.sk-btn:hover,.sk-card:hover{transform:none}
+}
+
+/* Lazy loading optimizado */
+.lazy-load{opacity:0;transition:opacity .3s ease}
+.lazy-load.loaded{opacity:1}
+
+/* Ripple optimizado */
+.sk-btn .ripple{position:absolute;width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:ripple .6s ease-out forwards;pointer-events:none;will-change:transform,opacity}
+@keyframes ripple{to{transform:scale(18);opacity:0}}
